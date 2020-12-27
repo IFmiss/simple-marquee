@@ -56,7 +56,7 @@ const Marquee: React.FC<MarqueeProps> = ({
     return (mgWrapRef.current?.getBoundingClientRect()[rectProp]) as number - indent;
   }, [isVertical, indent]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setMove(getReversePos());
   }, [])
 

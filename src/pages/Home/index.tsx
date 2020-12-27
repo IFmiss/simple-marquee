@@ -1,3 +1,4 @@
+import List from '@pages/List';
 import React, { useState } from 'react'
 import Marquee from '../../Marquee';
 import MarqueeGroup from '../../Marquee/MarqueeGroup';
@@ -10,9 +11,10 @@ const Home: React.FC<IHomeProps> = (props) => {
 
   return (
     <div className={styles.home}>
+      <h1>Simple Marquee for React</h1>
       <button onClick={() => setStopMarquee(s => !s)}>开关</button>
-      <div>
-        <h3 className={'title'}>横向</h3>
+      <div className={styles.area}>
+        <h3 className={styles.title}>横向</h3>
         <Marquee style={{
           width: '400px',
           maxWidth: '100%', 
@@ -20,12 +22,38 @@ const Home: React.FC<IHomeProps> = (props) => {
         }}
         direction={'horizontal'}
         stop={stopMarquee}>
-          <h3 className={styles['horizontal-item']}>123123123123123123123123123123123123123123</h3>
+          <List style={{
+            backgroundColor: `#${Math.random().toString(16).substr(2, 6)}`
+          }}>你好</List>
+          <List style={{
+            backgroundColor: `#${Math.random().toString(16).substr(2, 6)}`
+          }}>你好</List>
+          <List style={{
+            backgroundColor: `#${Math.random().toString(16).substr(2, 6)}`
+          }}>你好</List>
+          <List style={{
+            backgroundColor: `#${Math.random().toString(16).substr(2, 6)}`
+          }}>你好</List>
+          <List style={{
+            backgroundColor: `#${Math.random().toString(16).substr(2, 6)}`
+          }}>你好</List>
+          <List style={{
+            backgroundColor: `#${Math.random().toString(16).substr(2, 6)}`
+          }}>你好</List>
+          <List style={{
+            backgroundColor: `#${Math.random().toString(16).substr(2, 6)}`
+          }}>你好</List>
+          <List style={{
+            backgroundColor: `#${Math.random().toString(16).substr(2, 6)}`
+          }}>你好</List>
+          <List style={{
+            backgroundColor: `#${Math.random().toString(16).substr(2, 6)}`
+          }}>你好</List>
         </Marquee>
       </div>
 
-      <div>
-        <h3 className={'title'}>Marquee组</h3>
+      <div className={styles.area}>
+        <h3 className={styles.title}>Marquee组</h3>
         <div>
           <MarqueeGroup stop={stopMarquee}>
             <Marquee style={{
@@ -69,8 +97,8 @@ const Home: React.FC<IHomeProps> = (props) => {
         </div>
       </div>
 
-      <div>
-        <h3 className={'title'}>横向-反方向</h3>
+      <div className={styles.area}>
+        <h3 className={styles.title}>横向-反方向</h3>
         <Marquee style={{
           width: '400px',
           maxWidth: '100%', 
@@ -81,8 +109,8 @@ const Home: React.FC<IHomeProps> = (props) => {
         </Marquee>
       </div>
 
-      <div>
-        <h3 className={'title'}>竖向</h3>
+      <div className={styles.area}>
+        <h3 className={styles.title}>竖向</h3>
         <Marquee style={{
           width: '400px',
           maxWidth: '100%', 
@@ -94,8 +122,8 @@ const Home: React.FC<IHomeProps> = (props) => {
         </Marquee>
       </div>
 
-      <div>
-        <h3 className={'title'}>竖向</h3>
+      <div className={styles.area}>
+        <h3 className={styles.title}>竖向</h3>
         <Marquee style={{
           width: '400px',
           maxWidth: '100%', 

@@ -3,13 +3,24 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 20px;
 
   div, span {
     padding: 15px 0;
   }
 
-  .horizontal-item {
-    margin: 0;
-    background: red;
+  .area {
+    position: relative;
+    .title {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+  
+    .horizontal-item {
+      margin: 0;
+      background: red;
+    }
   }
+
 }
