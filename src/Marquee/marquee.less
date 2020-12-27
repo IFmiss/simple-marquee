@@ -1,0 +1,23 @@
+.marquee {
+  width: 100%;
+  opacity: 1;
+  .marquee_wrap {
+    flex: 0 0 auto;
+    width: auto;
+    opacity: 1;
+    will-change: auto;
+  }
+  &.horizontal, &.horizontal-reverse {
+    display: flex;
+    .marquee_wrap {
+      display: inline-flex;
+      min-width: 100%;
+    }
+  }
+
+  &.vertical, &.vertical-reverse {
+    .marquee_wrap {
+      min-height: 100%;
+    }
+  }
+}
