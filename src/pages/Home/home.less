@@ -4,9 +4,11 @@
   justify-content: center;
   flex-direction: column;
   padding: 20px;
+  min-width: 100vw;
+  min-height: 100vh;
 
-  div, span {
-    padding: 15px 0;
+  h1 {
+    color: blue;
   }
 
   .area {
@@ -21,6 +23,25 @@
       margin: 0;
       background: red;
     }
-  }
+  
+    .marquee_group {
+      border-radius: 8px;
+      width: 400px;
+      max-width: 100%;
+      background-color: #ccc;
+      padding: 12px;
+    }
 
+    .marquee_group_vertical {
+      border-radius: 8px;
+      width: 400px;
+      max-width: 100%;
+      background-color: #ccc;
+      padding: 12px;
+      height: 100px;
+      &>div div {
+        margin-bottom: 20px;
+      }
+    }
+  }
 }

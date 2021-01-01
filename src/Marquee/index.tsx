@@ -101,9 +101,9 @@ const Marquee: React.FC<MarqueeProps> = ({
 
   const marqueeCls = classNames(
     styles.marquee,
-    styles[direction], {
+    styles[direction],
     className
-  });
+  );
 
   const marqueeWrapCls = classNames(styles.marquee_wrap);
 
