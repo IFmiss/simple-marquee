@@ -1,14 +1,25 @@
 .home {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 20px;
-  min-width: 100vw;
-  min-height: 100vh;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // flex-direction: column;
+  padding: 20px 10px 50px 10px;
+  box-sizing: border-box; 
+  // min-width: 100vw;
+  // min-height: 100vh;
+  position: relative;
+  color: #333;
+  line-height: 1.5;
+
+  code {
+    color: rgb(5, 201, 175);
+  }
 
   h1 {
-    color: blue;
+    color: #CC9999;
+    text-align: center;
+    z-index: 1;
+    line-height: 1.5;
   }
 
   .area {
@@ -17,6 +28,8 @@
       position: sticky;
       top: 0;
       z-index: 1;
+      background-color: #fff;
+      padding: 10px 0;
     }
   
     .horizontal-item {
@@ -26,22 +39,30 @@
   
     .marquee_group {
       border-radius: 8px;
-      width: 400px;
+      width: 440px;
       max-width: 100%;
       background-color: #ccc;
       padding: 12px;
+      box-sizing: border-box;
     }
 
     .marquee_group_vertical {
       border-radius: 8px;
-      width: 400px;
+      width: 440px;
       max-width: 100%;
       background-color: #ccc;
-      padding: 12px;
+      padding: 0 12px;
       height: 100px;
-      &>div div {
-        margin-bottom: 20px;
-      }
+      box-sizing: border-box;
     }
+  }
+
+  button {
+    background-color: #55aa11;
+    color: #fff;
+    margin: 20px 0;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 12px;
   }
 }
