@@ -10,8 +10,7 @@ import React, {
 } from 'react';
 import styles from './marquee.less';
 import classNames from 'classnames';
-import MarqueeGroup from './MarqueeGroup';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export interface MarqueeProps extends React.HTMLAttributes<HTMLDivElement> {
   speed?: number;
@@ -125,9 +124,17 @@ const Marquee: React.FC<MarqueeProps> = ({
   );
 };
 
-//Marquee.propTypes = {
-//	props: PropTypes.string
-//};
+Marquee.propTypes = {
+  speed: PropTypes.number,
+  indent: PropTypes.number,
+  direction: PropTypes.oneOf([
+    'horizontal',
+    'vertical',
+    'horizontal-reverse',
+    'vertical-reverse'
+  ]),
+  stop: PropTypes.bool
+};
 
 Marquee.displayName = 'Marquee';
 

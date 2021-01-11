@@ -28,7 +28,8 @@ const Home: React.FC<IHomeProps> = (props) => {
   return (
     <div className={styles.home}>
       <h1>Simple Marquee for React</h1>
-      <p>组件使用js实现的 Marquee 功能不适用于多个 Marquee 组件同时展示</p>
+
+      <p>⚠️ 组件使用js实现的 Marquee 功能不适用于多个 Marquee 组件同时展示</p>
       
       <code>npm i simple-marquee</code>
       <p>OR</p>
@@ -42,7 +43,7 @@ const Home: React.FC<IHomeProps> = (props) => {
           2020年结束了，2021年开始了，为新的一年，加油 ！！！！⛽️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </Marquee>
       </div>
-      <button onClick={() => onBtnClick(-1)}>{ isPlay(0) ? '启动' : '关闭' }</button>
+      <button onClick={() => onBtnClick(-1)}>{ isPlay(-1) ? '启动' : '关闭' }</button>
 
       <div className={styles.area}>
         <h3 className={styles.title}>横向列表</h3>

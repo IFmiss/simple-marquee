@@ -1,5 +1,5 @@
 import React, { isValidElement } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export interface MarqueeGroupProps {
   stop?: boolean;
@@ -29,9 +29,9 @@ const MarqueeGroup: React.FC<MarqueeGroupProps> = ({
   );
 };
 
-//MarqueeGroup.propTypes = {
-//	props: PropTypes.string
-//};
+MarqueeGroup.propTypes = {
+	stop: PropTypes.bool
+};
 
 MarqueeGroup.displayName = 'MarqueeGroup';
 
