@@ -13,7 +13,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'index.html',
+			template: 'index.html',
+			favicon: 'src/pages/dw.png',
 			inject: true,
 			title: "simple-marquee",
 			minify: {

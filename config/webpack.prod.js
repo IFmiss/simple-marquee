@@ -18,7 +18,7 @@ module.exports = merge(common, {
   },
   externals: {
     // 使用 externals 需要在 index.html 中配置需要的 库 的cdn地址
-    react: 'React',
+    // react: 'React',
   },
   output: {
     path: path.resolve(__dirname, './../dist'),

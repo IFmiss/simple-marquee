@@ -43,7 +43,7 @@ const Home: React.FC<IHomeProps> = (props) => {
           2020年结束了，2021年开始了，为新的一年，加油 ！！！！⛽️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </Marquee>
       </div>
-      <button onClick={() => onBtnClick(-1)}>{ isPlay(-1) ? '启动' : '关闭' }</button>
+      <button onClick={() => onBtnClick(-1)}>{ isPlay(-1) ? '关闭' : '启动' }</button>
 
       <div className={styles.area}>
         <h3 className={styles.title}>横向列表</h3>
@@ -76,7 +76,7 @@ const Home: React.FC<IHomeProps> = (props) => {
           }}>花落知多少</List>
         </Marquee>
       </div>
-      <button onClick={() => onBtnClick(0)}>{ isPlay(0) ? '启动' : '关闭' }</button>
+      <button onClick={() => onBtnClick(0)}>{ isPlay(0) ? '关闭' : '启动' }</button>
 
       <div className={styles.area}>
         <h3 className={styles.title}>Marquee组</h3>
@@ -136,7 +136,7 @@ const Home: React.FC<IHomeProps> = (props) => {
           </MarqueeGroup>
         </div>
 
-        <button onClick={() => onBtnClick(1)}>{ isPlay(1) ? '启动' : '关闭' }</button>
+        <button onClick={() => onBtnClick(1)}>{ isPlay(1) ? '关闭' : '启动' }</button>
       </div>
 
       <div className={styles.area}>
@@ -149,7 +149,7 @@ const Home: React.FC<IHomeProps> = (props) => {
               }}>明天会更好，打工人</List>
         </Marquee>
 
-        <button onClick={() => onBtnClick(2)}>{ isPlay(2) ? '启动' : '关闭' }</button>
+        <button onClick={() => onBtnClick(2)}>{ isPlay(2) ? '关闭' : '启动' }</button>
       </div>
 
       <div className={styles.area}>
@@ -167,7 +167,7 @@ const Home: React.FC<IHomeProps> = (props) => {
                 // backgroundColor: `#${color}`
               }}>react simple marquee</List>
         </Marquee>
-        <button onClick={() => onBtnClick(3)}>{ isPlay(3) ? '启动' : '关闭' }</button>
+        <button onClick={() => onBtnClick(3)}>{ isPlay(3) ? '关闭' : '启动' }</button>
       </div>
 
       <div className={styles.area}>
@@ -185,7 +185,7 @@ const Home: React.FC<IHomeProps> = (props) => {
                 // backgroundColor: `#${color}`
               }}>33333333</List>
         </Marquee>
-        <button onClick={() => onBtnClick(4)}>{ isPlay(4) ? '启动' : '关闭' }</button>
+        <button onClick={() => onBtnClick(4)}>{ isPlay(4) ? '关闭' : '启动' }</button>
       </div>
     </div>
   )
