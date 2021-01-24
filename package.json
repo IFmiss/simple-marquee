@@ -16,6 +16,14 @@
     "lib": "rollup -c",
     "build": "webpack --progress --config ./config/webpack.prod.js"
   },
+  "keywords": [
+    "marquee",
+    "react-marquee"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IFmiss/simple-marquee.git"
+  },
   "dependencies": {
     "classnames": "^2.2.6",
     "react": "^16.12.0"
