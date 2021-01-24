@@ -1,5 +1,4 @@
 import React, {
-  useLayoutEffect,
   useRef,
   useState,
   CSSProperties,

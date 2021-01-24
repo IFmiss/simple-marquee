@@ -1,8 +1,9 @@
 import List from '@pages/List';
 import React, { useState } from 'react'
 import Marquee from '../../Marquee';
-import MarqueeGroup from '../../Marquee/MarqueeGroup';
+// import MarqueeGroup from '../../Marquee/MarqueeGroup';
 import styles from './home.less'
+const { MarqueeGroup } = Marquee;
 
 interface IHomeProps {}
 
