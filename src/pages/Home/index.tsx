@@ -1,6 +1,6 @@
 import List from '@pages/List';
 import React, { useState } from 'react'
-import Marquee from '../../Marquee';
+import Marquee from 'simple-marquee';
 // import MarqueeGroup from '../../Marquee/MarqueeGroup';
 import styles from './home.less'
 const { MarqueeGroup } = Marquee;

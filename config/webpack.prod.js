@@ -22,7 +22,7 @@ module.exports = merge(common, {
   },
   output: {
     path: path.resolve(__dirname, './../dist'),
-    publicPath: './',
+    publicPath: '//www.daiwei.site/pr/simple-marquee',
     filename: 'js/[name]-[hash].js',
     libraryTarget: 'umd'
   },
