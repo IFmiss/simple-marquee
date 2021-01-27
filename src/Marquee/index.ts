@@ -9,4 +9,7 @@ interface CompoundedComponent
 const Marquee = M as CompoundedComponent;
 Marquee.MarqueeGroup = MarqueeGroup;
 
+export {
+  MarqueeGroup
+};
 export default Marquee;

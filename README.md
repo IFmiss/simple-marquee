@@ -12,6 +12,21 @@ npm i simple-marquee
 yarn add simple-marquee
 ```
 
+### import
+```js
+import Marquee from 'simple-marquee';
+const {
+  MarqueeGroup
+} = Marquee;
+```
+**OR**
+```js
+import Marquee, {
+  MarqueeGroup
+} from 'simple-marquee';
+```
+
+### Marquee text
 ```tsx
 <Marquee className={styles.marquee_group}
   direction={'horizontal'}
@@ -20,6 +35,7 @@ yarn add simple-marquee
 </Marquee>
 ```
 
+### Marquee list
 ```tsx
 <MarqueeGroup stop={!(stopMarquee.stop && stopMarquee.index === 1)}>
   <Marquee
