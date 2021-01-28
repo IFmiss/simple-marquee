@@ -36,7 +36,7 @@ const Home: React.FC<IHomeProps> = (props) => {
       <code>npm i simple-marquee</code>
       <p>OR</p>
       <code>yarn add simple-marquee</code>
-{/* 
+
       <div className={styles.area}>
         <h3 className={styles.title}>横向文字</h3>
         <Marquee className={styles.marquee_group}
@@ -78,13 +78,13 @@ const Home: React.FC<IHomeProps> = (props) => {
           }}>花落知多少</List>
         </Marquee>
       </div>
-      <button onClick={() => onBtnClick(0)}>{ isPlay(0) ? '关闭' : '启动' }</button> */}
+      <button onClick={() => onBtnClick(0)}>{ isPlay(0) ? '关闭' : '启动' }</button>
 
       <div className={styles.area}>
         <h3 className={styles.title}>Marquee组</h3>
         <div className={styles.marquee_group}>
           <MarqueeGroup stop={!(stopMarquee.stop && stopMarquee.index === 1)}>
-            {/* <Marquee
+            <Marquee
             style={{
               marginBottom: '12px'
             }}
@@ -100,7 +100,7 @@ const Home: React.FC<IHomeProps> = (props) => {
               <List style={{
                 backgroundColor: `#${color}`
               }}>古道西风瘦马</List>
-            </Marquee> */}
+            </Marquee>
             <Marquee
             style={{
               marginBottom: '12px'
@@ -121,7 +121,7 @@ const Home: React.FC<IHomeProps> = (props) => {
                 backgroundColor: `#${color}`
               }}>一岁一枯荣</List>
             </Marquee>
-            {/* <Marquee
+            <Marquee
             direction={'horizontal'}
             indent={55}
             speed={1.4}>
@@ -134,14 +134,14 @@ const Home: React.FC<IHomeProps> = (props) => {
               <List style={{
                 backgroundColor: `#${color}`
               }}>春风吹又生</List>
-            </Marquee> */}
+            </Marquee>
           </MarqueeGroup>
         </div>
 
         <button onClick={() => onBtnClick(1)}>{ isPlay(1) ? '关闭' : '启动' }</button>
       </div>
 
-      {/* <div className={styles.area}>
+      <div className={styles.area}>
         <h3 className={styles.title}>横向-反方向</h3>
         <Marquee className={`${styles.marquee_group} ${styles.horizontal_reverse}`}
         direction={'horizontal-reverse'}
@@ -152,9 +152,9 @@ const Home: React.FC<IHomeProps> = (props) => {
         </Marquee>
 
         <button onClick={() => onBtnClick(2)}>{ isPlay(2) ? '关闭' : '启动' }</button>
-      </div> */}
+      </div>
 
-      {/* <div className={styles.area}>
+      <div className={styles.area}>
         <h3 className={styles.title}>竖向</h3>
         <Marquee className={styles.marquee_group_vertical}
         direction={'vertical'}
@@ -170,9 +170,9 @@ const Home: React.FC<IHomeProps> = (props) => {
               }}>react simple marquee</List>
         </Marquee>
         <button onClick={() => onBtnClick(3)}>{ isPlay(3) ? '关闭' : '启动' }</button>
-      </div> */}
+      </div>
 
-      {/* <div className={styles.area}>
+      <div className={styles.area}>
         <h3 className={styles.title}>竖向-反方向</h3>
         <Marquee className={styles.marquee_group_vertical}
         direction={'vertical-reverse'}
@@ -191,7 +191,7 @@ const Home: React.FC<IHomeProps> = (props) => {
               }}>33333333</List>
         </Marquee>
         <button onClick={() => onBtnClick(4)}>{ isPlay(4) ? '关闭' : '启动' }</button>
-      </div> */}
+      </div>
     </div>
   )
 }

@@ -39,24 +39,47 @@ const Marquee: React.FC<MarqueeProps> = ({
 
   const isReverse = useMemo(() => {
     return (
-      direction === 'horizontal-reverse' || direction === 'vertical-reverse'
+      direction === 'horizontal-reverse' ||
+      direction === 'vertical-reverse'
     )
   }, [direction])
 
   const isVertical = useMemo(() => {
     return (
-      direction === 'vertical' || direction === 'vertical-reverse'
+      direction === 'vertical' ||
+      direction === 'vertical-reverse'
     )
   }, [direction]);
 
-  const getReversePos = useCallback(() => {
-    const rectProp = isVertical ? 'height' : 'width';
-    return (mgWrapRef.current?.getBoundingClientRect()[rectProp]) as number - indent;
-  }, [isVertical, indent]);
+  const rectProp = useMemo(() => {
+    return isVertical
+      ? 'height'
+      : 'width';
+  }, [isVertical]);
+
+  const getPos = useCallback(() => {
+    const mgWrapRectProp = mgWrapRef.current?.getBoundingClientRect()[rectProp] || 0;
+    const mgRectProp = mgRef.current?.getBoundingClientRect()[rectProp] || 0;
+    return isReverse
+      ? (
+        mgRectProp > mgWrapRectProp
+          ? mgWrapRectProp
+          : mgWrapRectProp + (mgWrapRectProp - mgRectProp) - indent
+      )
+      : mgWrapRectProp - indent;
+  }, [isVertical, move]);
+
+  const reverseTransPos = useMemo(() => {
+    const mgWrapRectProp = mgWrapRef.current?.getBoundingClientRect()[rectProp] || 0;
+    const mgRectProp = mgRef.current?.getBoundingClientRect()[rectProp] || 0;
+    return isReverse
+      ? mgWrapRectProp - mgRectProp
+      : 0
+  }, [isReverse, move]); 
 
   useEffect(() => {
-    setMove(getReversePos());
-  }, [])
+    setMove(getPos());
+  }, []);
 
   useEffect(() => {
     if (stop) {
@@ -71,16 +94,15 @@ const Marquee: React.FC<MarqueeProps> = ({
 
   // 动画执行
   const runAnimate = useCallback(() => {
-    const rectProp = isVertical ? 'height' : 'width';
     const f = () => {
       if (isReverse) {
-        if (move <= 1) {
-          setMove(getReversePos());
+        if (move < reverseTransPos) {
+          setMove(getPos());
         } else {
           setMove(m => m - speed);
         }
       } else {
-        if (move >= (mgWrapRef.current?.getBoundingClientRect()[rectProp] ?? 0) - 1) {
+        if (move > (mgWrapRef.current?.getBoundingClientRect()[rectProp] ?? 0)) {
           setMove(0);
         } else {
           setMove(m => m + speed);
