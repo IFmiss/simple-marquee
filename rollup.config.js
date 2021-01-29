@@ -31,6 +31,7 @@ export default {
     file: `lib/umd/index.js`,
     format: 'umd',
     name: 'index.js',
+    exports: 'named',
     ...GLOBALS_MAP
   }],
   external: [
@@ -58,7 +59,7 @@ export default {
     }),
     babel({
       exclude: 'node_modules/**',
-      runtimeHelpers: 'runtime'
+      babelHelpers: 'runtime'
     }),
     resolve({
       mainFields: 'main',

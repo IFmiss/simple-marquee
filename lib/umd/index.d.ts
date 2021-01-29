@@ -5,4 +5,5 @@ interface CompoundedComponent extends React.ForwardRefExoticComponent<MarqueePro
     MarqueeGroup: typeof MarqueeGroup;
 }
 declare const Marquee: CompoundedComponent;
+export { MarqueeGroup };
 export default Marquee;
