@@ -15,11 +15,12 @@ export interface MarqueeProps extends React.HTMLAttributes<HTMLDivElement> {
   speed?: number;
   indent?: number;
   direction?:
-    'horizontal'
-    | 'vertical'
-    | 'horizontal-reverse'
-    | 'vertical-reverse';
+  'horizontal'
+  | 'vertical'
+  | 'horizontal-reverse'
+  | 'vertical-reverse';
   stop?: boolean;
+  pauseOnHover?: boolean;
 }
 
 const Marquee: React.FC<MarqueeProps> = ({
@@ -28,6 +29,7 @@ const Marquee: React.FC<MarqueeProps> = ({
   indent = 0,
   direction = 'horizontal',
   stop = false,
+  pauseOnHover = false,
   style,
   className,
   ...rest
@@ -35,6 +37,7 @@ const Marquee: React.FC<MarqueeProps> = ({
   const mgRef = useRef<HTMLDivElement>(null);
   const mgWrapRef = useRef<HTMLDivElement>(null);
   const [move, setMove] = useState(indent);
+  const [hovered, setHovered] = useState(false);
   let timerMarquee: any;
 
   const isReverse = useMemo(() => {
@@ -75,7 +78,7 @@ const Marquee: React.FC<MarqueeProps> = ({
     return isReverse
       ? mgWrapRectProp - mgRectProp
       : 0
-  }, [isReverse, move]); 
+  }, [isReverse, move]);
 
   useEffect(() => {
     setMove(getPos());
@@ -83,14 +86,21 @@ const Marquee: React.FC<MarqueeProps> = ({
 
   useEffect(() => {
     if (stop) {
-      return timerMarquee && cancelAnimationFrame(timerMarquee);
+      return stopThis()
+    }
+    if (pauseOnHover && hovered) {
+      return stopThis()
     }
     runAnimate();
 
     return () => {
       cancelAnimationFrame(timerMarquee)
     };
-  }, [move, stop]);
+  }, [move, stop, pauseOnHover, hovered]);
+
+  const stopThis = () => {
+    timerMarquee && cancelAnimationFrame(timerMarquee);
+  }
 
   // 动画执行
   const runAnimate = useCallback(() => {
@@ -131,6 +141,8 @@ const Marquee: React.FC<MarqueeProps> = ({
     <div {...rest}
       className={marqueeCls}
       ref={mgRef}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       style={{
         ...style,
         overflow: 'hidden'
@@ -154,7 +166,8 @@ Marquee.propTypes = {
     'horizontal-reverse',
     'vertical-reverse'
   ]),
-  stop: PropTypes.bool
+  stop: PropTypes.bool,
+  pauseOnHover: PropTypes.bool,
 };
 
 Marquee.displayName = 'Marquee';

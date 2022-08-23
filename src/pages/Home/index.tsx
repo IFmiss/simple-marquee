@@ -6,7 +6,7 @@ import Marquee, {
 // import MarqueeGroup from '../../Marquee/MarqueeGroup';
 import styles from './home.less'
 
-interface IHomeProps {}
+interface IHomeProps { }
 
 const color = '6f7f81'
 
@@ -32,7 +32,7 @@ const Home: React.FC<IHomeProps> = (props) => {
       <h1>Simple Marquee for React</h1>
 
       <p>⚠️ 组件使用js实现的 Marquee 功能不适用于多个 Marquee 组件同时展示</p>
-      
+
       <code>npm i simple-marquee</code>
       <p>OR</p>
       <code>yarn add simple-marquee</code>
@@ -41,17 +41,18 @@ const Home: React.FC<IHomeProps> = (props) => {
         <h3 className={styles.title}>横向文字</h3>
         <Marquee className={styles.marquee_group}
           direction={'horizontal'}
+          pauseOnHover={true}
           stop={!(stopMarquee.stop && stopMarquee.index === -1)}>
           2020年结束了，2021年开始了，为新的一年，加油 ！！！！⛽️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </Marquee>
       </div>
-      <button onClick={() => onBtnClick(-1)}>{ isPlay(-1) ? '关闭' : '启动' }</button>
+      <button onClick={() => onBtnClick(-1)}>{isPlay(-1) ? '关闭' : '启动'}</button>
 
       <div className={styles.area}>
         <h3 className={styles.title}>横向列表</h3>
         <Marquee className={styles.marquee_group}
-        direction={'horizontal'}
-        stop={!(stopMarquee.stop && stopMarquee.index === 0)}>
+          direction={'horizontal'}
+          stop={!(stopMarquee.stop && stopMarquee.index === 0)}>
           <List style={{
             backgroundColor: `#${color}`
           }}>白日依山尽</List>
@@ -78,19 +79,19 @@ const Home: React.FC<IHomeProps> = (props) => {
           }}>花落知多少</List>
         </Marquee>
       </div>
-      <button onClick={() => onBtnClick(0)}>{ isPlay(0) ? '关闭' : '启动' }</button>
+      <button onClick={() => onBtnClick(0)}>{isPlay(0) ? '关闭' : '启动'}</button>
 
       <div className={styles.area}>
         <h3 className={styles.title}>Marquee组</h3>
         <div className={styles.marquee_group}>
           <MarqueeGroup stop={!(stopMarquee.stop && stopMarquee.index === 1)}>
             <Marquee
-            style={{
-              marginBottom: '12px'
-            }}
-            speed={1.8}
-            indent={10}
-            direction={'horizontal'}>
+              style={{
+                marginBottom: '12px'
+              }}
+              speed={1.8}
+              indent={10}
+              direction={'horizontal'}>
               <List style={{
                 backgroundColor: `#${color}`
               }}>枯藤老树昏鸦</List>
@@ -102,12 +103,12 @@ const Home: React.FC<IHomeProps> = (props) => {
               }}>古道西风瘦马</List>
             </Marquee>
             <Marquee
-            style={{
-              marginBottom: '12px'
-            }}
-            direction={'horizontal-reverse'}
-            indent={0}
-            speed={1.2}>
+              style={{
+                marginBottom: '12px'
+              }}
+              direction={'horizontal-reverse'}
+              indent={0}
+              speed={1.2}>
               <List style={{
                 backgroundColor: `#${color}`
               }}>夕阳西下</List>
@@ -122,9 +123,9 @@ const Home: React.FC<IHomeProps> = (props) => {
               }}>一岁一枯荣</List>
             </Marquee>
             <Marquee
-            direction={'horizontal'}
-            indent={55}
-            speed={1.4}>
+              direction={'horizontal'}
+              indent={55}
+              speed={1.4}>
               <List style={{
                 backgroundColor: `#${color}`
               }}>一岁一枯荣</List>
@@ -138,59 +139,69 @@ const Home: React.FC<IHomeProps> = (props) => {
           </MarqueeGroup>
         </div>
 
-        <button onClick={() => onBtnClick(1)}>{ isPlay(1) ? '关闭' : '启动' }</button>
+        <button onClick={() => onBtnClick(1)}>{isPlay(1) ? '关闭' : '启动'}</button>
       </div>
 
       <div className={styles.area}>
         <h3 className={styles.title}>横向-反方向</h3>
         <Marquee className={`${styles.marquee_group} ${styles.horizontal_reverse}`}
-        direction={'horizontal-reverse'}
-        stop={!(stopMarquee.stop && stopMarquee.index === 2)}>
+          direction={'horizontal-reverse'}
+          stop={!(stopMarquee.stop && stopMarquee.index === 2)}>
           <List style={{
-                backgroundColor: `#${color}`
-              }}>明天会更好，打工人</List>
+            backgroundColor: `#${color}`
+          }}>明天会更好，打工人</List>
         </Marquee>
 
-        <button onClick={() => onBtnClick(2)}>{ isPlay(2) ? '关闭' : '启动' }</button>
+        <button onClick={() => onBtnClick(2)}>{isPlay(2) ? '关闭' : '启动'}</button>
       </div>
 
       <div className={styles.area}>
         <h3 className={styles.title}>竖向</h3>
         <Marquee className={styles.marquee_group_vertical}
-        direction={'vertical'}
-        stop={!(stopMarquee.stop && stopMarquee.index === 3)}>
+          direction={'vertical'}
+          stop={!(stopMarquee.stop && stopMarquee.index === 3)}>
           <List style={{
-                // backgroundColor: `#${color}`
-              }}>hello</List>
+            // backgroundColor: `#${color}`
+          }}>hello</List>
           <List style={{
-                // backgroundColor: `#${color}`
-              }}>this is a react component</List>
+            // backgroundColor: `#${color}`
+          }}>this is a react component</List>
           <List style={{
-                // backgroundColor: `#${color}`
-              }}>react simple marquee</List>
+            // backgroundColor: `#${color}`
+          }}>react simple marquee</List>
         </Marquee>
-        <button onClick={() => onBtnClick(3)}>{ isPlay(3) ? '关闭' : '启动' }</button>
+        <button onClick={() => onBtnClick(3)}>{isPlay(3) ? '关闭' : '启动'}</button>
       </div>
 
       <div className={styles.area}>
         <h3 className={styles.title}>竖向-反方向</h3>
         <Marquee className={styles.marquee_group_vertical}
-        direction={'vertical-reverse'}
-        stop={!(stopMarquee.stop && stopMarquee.index === 4)}>
+          direction={'vertical-reverse'}
+          stop={!(stopMarquee.stop && stopMarquee.index === 4)}>
           <List style={{
-                // backgroundColor: `#${color}`
-                margin: '20px'
-              }}>11111111111</List>
+            // backgroundColor: `#${color}`
+            margin: '20px'
+          }}>11111111111</List>
           <List style={{
-                // backgroundColor: `#${color}`
-                margin: '20px'
-              }}>22222222</List>
+            // backgroundColor: `#${color}`
+            margin: '20px'
+          }}>22222222</List>
           <List style={{
-                // backgroundColor: `#${color}`
-                margin: '20px'
-              }}>33333333</List>
+            // backgroundColor: `#${color}`
+            margin: '20px'
+          }}>33333333</List>
         </Marquee>
-        <button onClick={() => onBtnClick(4)}>{ isPlay(4) ? '关闭' : '启动' }</button>
+        <button onClick={() => onBtnClick(4)}>{isPlay(4) ? '关闭' : '启动'}</button>
+      </div>
+
+      <div className={styles.area}>
+        <h3 className={styles.title}>Pause On Hover <span className={styles.badge}>new</span></h3>
+        <Marquee className={styles.marquee_group}
+          direction={'horizontal'}
+          pauseOnHover={true}
+          stop={!(stopMarquee.stop && stopMarquee.index === -1)}>
+          2020年结束了，2021年开始了，为新的一年，加油 ！！！！⛽️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </Marquee>
       </div>
     </div>
   )
