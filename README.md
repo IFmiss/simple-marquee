@@ -104,4 +104,5 @@ import Marquee, {
   - 'horizontal-reverse'
   - 'vertical-reverse'
 - `stop` 【boolean】  Control animation state  
+- `pauseOnHover`【boolean】 Control animation state when mouseover `default` false
 
