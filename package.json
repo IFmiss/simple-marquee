@@ -1,6 +1,6 @@
 {
   "name": "simple-marquee",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "marquee components for react",
   "author": "daiwei",
   "main": "lib/umd/index.js",
