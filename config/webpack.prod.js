@@ -22,7 +22,7 @@ module.exports = merge(common, {
   },
   output: {
     path: path.resolve(__dirname, './../dist'),
-    publicPath: '//www.daiwei.site/pr/simple-marquee',
+    publicPath: '/',
     filename: 'js/[name]-[hash].js',
     libraryTarget: 'umd'
   },
@@ -45,7 +45,7 @@ module.exports = merge(common, {
     // css 压缩
     new OptimizeCssAssetsPlugin({}),
 
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin()
   ],
   optimization: {
     namedModules: true,
