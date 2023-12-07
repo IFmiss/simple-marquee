@@ -1,7 +1,7 @@
 # simple-marquee
 **marquee component for react by requestAnimationFrame**
 
-### [demo](https://daiwei.site/marquee)
+### [demo](https://simple-marquee-git-master-ifmiss.vercel.app/)
 
 ### start
 ```code
